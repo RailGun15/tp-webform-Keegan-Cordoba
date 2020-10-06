@@ -16,3 +16,9 @@ C:\Users\Ignacio\source\repos\producto-app\Dominio\obj\Debug\Dominio.csprojAssem
 C:\Users\Ignacio\source\repos\producto-app\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\Ignacio\source\repos\producto-app\Dominio\obj\Debug\Dominio.dll
 C:\Users\Ignacio\source\repos\producto-app\Dominio\obj\Debug\Dominio.pdb
+C:\Users\Ignacio\source\repos\tp-webform-Keegan-Cordoba\Dominio\bin\Debug\Dominio.dll
+C:\Users\Ignacio\source\repos\tp-webform-Keegan-Cordoba\Dominio\bin\Debug\Dominio.pdb
+C:\Users\Ignacio\source\repos\tp-webform-Keegan-Cordoba\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
+C:\Users\Ignacio\source\repos\tp-webform-Keegan-Cordoba\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Ignacio\source\repos\tp-webform-Keegan-Cordoba\Dominio\obj\Debug\Dominio.dll
+C:\Users\Ignacio\source\repos\tp-webform-Keegan-Cordoba\Dominio\obj\Debug\Dominio.pdb
