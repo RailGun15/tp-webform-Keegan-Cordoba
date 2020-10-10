@@ -3,27 +3,23 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2>ARTICULOS </h2>
     <hr />
-    <div class="container">
+    
         <div class="row">
-            <div class="col">
+            <div class="card-columns col-6">
                 <%foreach (Dominio.Articulo item in listaArticulo)
                     { %>
-                <div class="card-columns">
-                    <div class="card">
-                        <img src="<% = item.UrlImagen%>" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title"><%  =item.Nombre %></h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </div>
+            
+                <div class="card  bg-light border-dark mb-3" style="max-width: 18rem;">
+                    <img src="<% =item.UrlImagen%>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><% =item.Nombre%></h5>
+                        <p class="card-text"><% =item.Descripcion%></p>
+                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
                     </div>
                 </div>
+                
                 <%  } %>
             </div>
-        </div>
-
-
-
-
     </div>
 
     <asp:GridView CssClass="table" ID="dgvArticulo" runat="server"></asp:GridView>
