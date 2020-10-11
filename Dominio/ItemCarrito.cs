@@ -13,6 +13,16 @@ namespace Dominio
         public ItemCarrito(int id)
         {
             this.Id = id;
+            Cantidad = 0;
+        }
+
+        public ItemCarrito(Articulo art)
+        {
+            Id = art.Id;
+            Nombre = art.Nombre;
+            Precio = art.Precio;
+            UrlImagen = art.UrlImagen;
+            Cantidad = 0;
         }
 
         public decimal PrecioTotal()
@@ -20,10 +30,6 @@ namespace Dominio
             return Precio * Cantidad;
         }
 
-        public bool Equals(ItemCarrito item)
-        {
-            return item.Id == this.Id;
-        }
 
     }
 }

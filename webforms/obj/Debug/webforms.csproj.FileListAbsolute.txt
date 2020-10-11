@@ -150,3 +150,7 @@ C:\Users\Asdmin\Documents\GitHub\tp-webform-Keegan-Cordoba\webforms\bin\Comercio
 C:\Users\Asdmin\Documents\GitHub\tp-webform-Keegan-Cordoba\webforms\bin\Dominio.dll
 C:\Users\Asdmin\Documents\GitHub\tp-webform-Keegan-Cordoba\webforms\bin\Comercio.pdb
 C:\Users\Asdmin\Documents\GitHub\tp-webform-Keegan-Cordoba\webforms\bin\Dominio.pdb
+C:\Users\Ignacio\source\repos\tp-webform-Keegan-Cordoba\webforms\bin\Comercio.dll
+C:\Users\Ignacio\source\repos\tp-webform-Keegan-Cordoba\webforms\bin\Dominio.dll
+C:\Users\Ignacio\source\repos\tp-webform-Keegan-Cordoba\webforms\bin\Comercio.pdb
+C:\Users\Ignacio\source\repos\tp-webform-Keegan-Cordoba\webforms\bin\Dominio.pdb
