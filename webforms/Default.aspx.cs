@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.Expressions;
 using Comercio;
 using Dominio;
 
@@ -17,6 +18,14 @@ namespace webforms
         {
             ArticuloComercio comercio = new ArticuloComercio();
             listaArticulo = comercio.Listar();
+            if (!String.IsNullOrEmpty(Request.QueryString["srch"]))
+            {
+                string find = Request.QueryString["srch"];
+                List<Articulo> selected = listaArticulo.FindAll(x => x.Nombre.ToUpper().Contains(find.ToUpper()));
+                list.DataSource = selected;
+                list.DataBind();
+                return;
+            }
             if (!Page.IsPostBack)
             {
                 list.DataSource = listaArticulo;
