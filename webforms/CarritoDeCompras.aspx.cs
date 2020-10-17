@@ -23,18 +23,7 @@ namespace webforms
                 }
                 else
                 {
-                    art = (Articulo)Session["articuloSeleccionado"];
-                    ItemCarrito i = new ItemCarrito(art);
-                    if ((Carrito)Session["carrito"] == null)
-                    {
-                        carr.AgregarItem(i);
-                    }
-                    else
-                    {
-                        carr = (Carrito)Session["carrito"];
-                        carr.AgregarItem(i);
-                    }
-                    Session.Add("carrito", carr);
+                    carr = (Carrito)Session["carrito"];
                 }
             }
             catch (Exception)

@@ -41,8 +41,8 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">TP3</a>
+        <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-primary" style="background-color: #e3f2fd";>
+            <a class="navbar-brand" href="#"><img src="~/webforms/Content/logo-utn.png" width="30" height="30" alt="" runat="server"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -58,8 +58,8 @@
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0 ">
-                    <asp:TextBox ID="txtSearchMaster" runat="server"></asp:TextBox>
-                    <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
+                    <asp:TextBox CssClass ="form-control mr-sm-2" ID="txtSearchMaster" runat="server"></asp:TextBox>
+                    <asp:Button CssClass="btn btn-outline-success my-2 my-sm-0" ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
                 </form>
             </div>
         </nav>
