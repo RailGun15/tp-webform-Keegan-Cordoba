@@ -17,8 +17,8 @@
                                 <p class="card-text"><%# Eval("Descripcion")%></p>
                               </div>
                               <ul class="list-group list-group-flush">
-                                <asp:LinkButton CssClass="btn btn-primary" ID = "LinkButton2" runat="server" Text='Detalle' OnClick ="btn_Click" CommandArgument=<%# Eval("Id")%>></asp:LinkButton>
-                                <asp:LinkButton CssClass="btn btn-primary" ID = "LinkButton1" runat="server" Text='Agregar' OnClick ="btn_Click" CommandArgument=<%# Eval("Id")%>></asp:LinkButton>
+                                <asp:LinkButton CssClass="btn btn-primary" ID = "LinkButton2" runat="server" Text='Detalle' OnClick ="btnDetalle_Click" CommandArgument=<%# Eval("Id")%>></asp:LinkButton>
+                                <asp:LinkButton CssClass="btn btn-primary" ID = "LinkButton1" runat="server" Text='Agregar' OnClick ="btn_AgregarClick" CommandArgument=<%# Eval("Id")%>></asp:LinkButton>
                               </ul>
                             </div> 
                         </ItemTemplate>

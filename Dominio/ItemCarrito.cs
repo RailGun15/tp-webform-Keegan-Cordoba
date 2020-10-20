@@ -9,6 +9,7 @@ namespace Dominio
     public class ItemCarrito : Articulo
     {
         public int Cantidad { get; set; }
+        public decimal PrecioTotal { get => (Precio * Cantidad);}
 
         public ItemCarrito(int id)
         {
@@ -24,12 +25,6 @@ namespace Dominio
             UrlImagen = art.UrlImagen;
             Cantidad = 0;
         }
-
-        public decimal PrecioTotal()
-        {
-            return Precio * Cantidad;
-        }
-
 
     }
 }

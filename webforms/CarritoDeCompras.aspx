@@ -13,19 +13,22 @@
                           <th scope="col">Precio</th>
                           <th scope="col">Cantidad</th>
                           <th scope="col">Subtotal</th>
+                          <th scope="col"></th>
                         </tr>
                       </thead>
                       <tbody>
-                          <%foreach (Dominio.ItemCarrito item in carr.Items)
-                            { %>
-                        <tr>
-                          <td><img src="<% =item.UrlImagen%>" alt="Image not found" height="60" width="60"/></td>
-                          <td style ="vertical-align:middle;font-size: 15px";><% =item.Nombre%></td>
-                          <td style ="vertical-align:middle;font-size: 15px";><% =item.Precio%></td>
-                          <td style ="vertical-align:middle;font-size: 15px";><% =item.Cantidad%></td>
-                          <td style ="vertical-align:middle;font-size: 15px";><% =item.PrecioTotal()%></td>
-                        </tr>
-                          <%  } %>
+                          <asp:Repeater runat="server" ID="cart">
+                            <ItemTemplate>
+                                <tr>
+                                  <td><img src="<%# Eval("UrlImagen")%>" alt="Image not found" height="60" width="60"/></td>
+                                  <td style ="vertical-align:middle;font-size: 15px";><%# Eval("Nombre")%></td>
+                                  <td style ="vertical-align:middle;font-size: 15px";><%# Eval("Precio")%></td>
+                                  <td style ="vertical-align:middle;font-size: 15px";><%# Eval("Cantidad")%>     <asp:LinkButton CssClass="btn btn-success" ID = "LinkButton1" runat="server" Text='+' OnClick ="btn_AgregarClick" CommandArgument=<%# Eval("Id")%>></asp:LinkButton></td>
+                                  <td style ="vertical-align:middle;font-size: 15px";><%# Eval("PrecioTotal")%></td>
+                                  <td style ="vertical-align:middle";><asp:LinkButton CssClass="btn btn-danger" ID = "LinkButton3" runat="server" Text='X' OnClick ="btn_RemoverClick" CommandArgument=<%# Eval("Id")%>></asp:LinkButton></td>
+                                </tr>
+                            </ItemTemplate>
+                        </asp:Repeater>
                   </tbody>
                     <tfoot>
                         <tr>

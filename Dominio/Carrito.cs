@@ -59,15 +59,21 @@ namespace Dominio
 
         public void RemoverItem(int id)
         {
-            ItemCarrito item = new ItemCarrito(id);
-            Items.Remove(item);
+            foreach (ItemCarrito i in Items)
+            {
+                if (i.Id == id)
+                {
+                    Items.Remove(i);
+                    return;
+                }
+            }
         }
             
         public decimal Total()
         {
             decimal total = 0;
             foreach (ItemCarrito i in Items)
-                total += i.PrecioTotal();
+                total += i.PrecioTotal;
             return total;
         }
     }

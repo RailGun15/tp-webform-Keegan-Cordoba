@@ -39,11 +39,10 @@ namespace webforms
             }
         }
 
-        public void btn_Click(object sender, EventArgs e)
+        public void btn_AgregarClick(object sender, EventArgs e)
         {
             var id = int.Parse((sender as LinkButton).CommandArgument);
             Articulo a = listaArticulo.Find(x => x.Id == id);
-            Session.Add("articuloSeleccionado", a);
             ItemCarrito i = new ItemCarrito(a);
             if ((Carrito)Session["carrito"] == null)
             {
@@ -56,6 +55,13 @@ namespace webforms
             }
             Session.Add("carrito", carr);
 
+        }
+        public void btnDetalle_Click(object sender, EventArgs e)
+        {
+            var id = int.Parse((sender as LinkButton).CommandArgument);
+            Articulo a = listaArticulo.Find(x => x.Id == id);
+            Session.Add("articuloSeleccionado", a);
+            Response.Redirect(ResolveUrl("Detalle.aspx"));
         }
 
         public void btnCheckout_Click(object sender, EventArgs e)

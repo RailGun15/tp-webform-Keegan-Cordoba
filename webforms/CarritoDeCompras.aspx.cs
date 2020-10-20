@@ -24,6 +24,8 @@ namespace webforms
                 else
                 {
                     carr = (Carrito)Session["carrito"];
+                    cart.DataSource = carr.Items;
+                    cart.DataBind();
                 }
             }
             catch (Exception)
@@ -33,7 +35,21 @@ namespace webforms
             }
             
         }
+        public void btn_RemoverClick(object sender, EventArgs e)
+        {
+            var id = int.Parse((sender as LinkButton).CommandArgument);
+            carr.RemoverItem(id);
+            Session.Add("carrito", carr);
+            Response.Redirect(Request.RawUrl);
+        }
 
-
+        public void btn_AgregarClick(object sender, EventArgs e)
+        {
+            var id = int.Parse((sender as LinkButton).CommandArgument);
+            ItemCarrito item = carr.Items.Find(x => x.Id == id);
+            carr.AgregarItem(item);
+            Session.Add("carrito", carr);
+            Response.Redirect(Request.RawUrl);
+        }
     }
 }
