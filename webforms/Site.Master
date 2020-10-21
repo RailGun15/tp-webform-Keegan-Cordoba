@@ -55,7 +55,32 @@
                     <li class="nav-item active">
                         <a class="nav-link mb-0 h4" href="CarritoDeCompras.aspx">&nbsp;Carrito De Compras</a>
                     </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle nav-link mb-0 h4" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Marcas
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <asp:ListView id="marc" runat="server" AutoPostBack="true"  SelectedIndexChanged ="marca_SelectedIndexChanged">
+                            <ItemTemplate>
+                                <a class="dropdown-item" href="#"><%#: Eval("Nombre") %></a>
+                            </ItemTemplate>
+                        </asp:ListView>
+                      </div>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle nav-link mb-0 h4" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Categorias
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <asp:ListView id="cat" runat="server" SelectedIndexChanged ="categoria_SelectedIndexChanged">
+                            <ItemTemplate>
+                                <a class="dropdown-item" href="#"><%#: Eval("Nombre") %></a>
+                            </ItemTemplate>
+                        </asp:ListView>
+                      </div>
+                    </li>
                 </ul>
+         
                 <form class="form-inline my-2 my-lg-0 ">
                     <asp:TextBox CssClass ="form-control mr-sm-2" ID="txtSearchMaster" runat="server"></asp:TextBox>
                     <asp:Button CssClass="btn btn-outline-primary my-2 my-sm-0" ID="btnSearch" runat="server" Text="Buscar" OnClick="btnSearch_Click" />

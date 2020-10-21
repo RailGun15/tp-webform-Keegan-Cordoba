@@ -17,7 +17,7 @@ namespace webforms
         {
             try
             {
-                if (Session["articuloSeleccionado"] == null)
+                if (Session["carrito"] == null)
                 {
                     Response.Write("<h2 style=margin-top:60px;text-align: center;>No hay articulos seleccionados</h2>");
                 }
