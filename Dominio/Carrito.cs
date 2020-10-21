@@ -11,21 +11,18 @@ namespace Dominio
     {
         public List<ItemCarrito> Items { get; set; }
 
-        public static readonly Carrito Instance;
-        static Carrito()
+        public Carrito()
         {
-            Instance = new Carrito();
-            Instance.Items = new List<ItemCarrito>();
+            Items = new List<ItemCarrito>();
         }
         
-        public void AgregarItem(int id)
+        public void AgregarItem(ItemCarrito item)
         {
-            ItemCarrito item = new ItemCarrito(id);
-            if (Items.Contains(item))
+            if (Items.Any(i => item.Id == i.Id))
             {
                 foreach (ItemCarrito i in Items)
                 {
-                    if (i.Equals(item))
+                    if (i.Id == item.Id)
                     {
                         i.Cantidad++;
                         return;
@@ -62,15 +59,21 @@ namespace Dominio
 
         public void RemoverItem(int id)
         {
-            ItemCarrito item = new ItemCarrito(id);
-            Items.Remove(item);
+            foreach (ItemCarrito i in Items)
+            {
+                if (i.Id == id)
+                {
+                    Items.Remove(i);
+                    return;
+                }
+            }
         }
             
         public decimal Total()
         {
             decimal total = 0;
             foreach (ItemCarrito i in Items)
-                total += i.PrecioTotal();
+                total += i.PrecioTotal;
             return total;
         }
     }

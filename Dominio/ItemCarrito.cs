@@ -9,20 +9,21 @@ namespace Dominio
     public class ItemCarrito : Articulo
     {
         public int Cantidad { get; set; }
+        public decimal PrecioTotal { get => (Precio * Cantidad);}
 
         public ItemCarrito(int id)
         {
             this.Id = id;
+            Cantidad = 0;
         }
 
-        public decimal PrecioTotal()
+        public ItemCarrito(Articulo art)
         {
-            return Precio * Cantidad;
-        }
-
-        public bool Equals(ItemCarrito item)
-        {
-            return item.Id == this.Id;
+            Id = art.Id;
+            Nombre = art.Nombre;
+            Precio = art.Precio;
+            UrlImagen = art.UrlImagen;
+            Cantidad = 0;
         }
 
     }
